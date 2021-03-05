@@ -1,4 +1,4 @@
-import Card
+from . import *
 
 class Cards:    #for all the CardType init
     def __init__(self, data):
