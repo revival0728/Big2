@@ -43,21 +43,21 @@ def make_Pair(cards):
     return Pair(cards)
 
 _Junko_Rank = {
-        [3, 4, 5, 6, 7] : 0,
-        [4, 5, 6, 7, 8] : 1,
-        [5, 6, 7, 8, 9] : 2,
-        [6, 7, 8, 9, 10] : 3,
-        [7, 8, 9, 10, 11] : 4,
-        [8, 9, 10, 11, 12] : 5,
-        [9, 10, 11, 12, 13] : 6,
-        [1, 2, 3, 4, 5] : 7
+        "[3, 4, 5, 6, 7]" : 0,
+        "[4, 5, 6, 7, 8]" : 1,
+        "[5, 6, 7, 8, 9]" : 2,
+        "[6, 7, 8, 9, 10]" : 3,
+        "[7, 8, 9, 10, 11]" : 4,
+        "[8, 9, 10, 11, 12]" : 5,
+        "[9, 10, 11, 12, 13]" : 6,
+        "[1, 2, 3, 4, 5]" : 7
         }
 
 def isJunko(cards):
     if not len(cards) == 5:
         return False
     cards.arrange()
-    if cards in _Junko_Rank:
+    if str(cards) in _Junko_Rank:
         return True
     return False
 
@@ -68,7 +68,7 @@ class Junko:
         self.junkoNumber = []
         for i in cards:
             self.junkoNumber.append(i.get_card()[1])
-        self.junkoRank = _Junko_Rank[self.junkoNumber]
+        self.junkoRank = _Junko_Rank[str(self.junkoNumber)]
     def __lt__(self, other):
         if self.junkoRank == other.junkoRank:
             if self.junkoRank == 7:

@@ -56,7 +56,7 @@ if __name__ == "__main__":
         if game.returnTurn() < playerNumber:
             printCards(allCards)
             cards = inputCards(nowPlayer)
-            if len(card) == 1 and cards[0] == len(allCards):
+            if len(cards) == 1 and cards[0] == len(allCards):
                 print("{} passed".format(nowPlayer.getName()))
                 game.nextPlayer()
                 continue
